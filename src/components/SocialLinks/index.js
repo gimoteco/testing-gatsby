@@ -2,7 +2,6 @@ import React from "react"
 import * as Style from "./styled"
 import Icons from "./icons"
 import links from "./content"
-import Link from "../../styles/Link"
 
 function SocialLinks() {
   return (
