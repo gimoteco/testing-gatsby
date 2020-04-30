@@ -25,12 +25,26 @@ function MenuBar() {
   return (
     <Style.MenuBarWrapper>
       <Style.MenuBarGroup>
-        <Style.MenuBarLink to="/" title="Voltar para Home">
+        <Style.MenuBarLink
+          cover
+          direction="right"
+          bg="var(--background)"
+          duration={0.6}
+          to="/"
+          title="Voltar para Home"
+        >
           <Style.MenuBarItem>
             <Home />
           </Style.MenuBarItem>
         </Style.MenuBarLink>
-        <Style.MenuBarLink to="/search/" title="Pesquisar">
+        <Style.MenuBarLink
+          cover
+          direction="right"
+          bg="var(--background)"
+          duration={0.6}
+          to="/search/"
+          title="Pesquisar"
+        >
           <Style.MenuBarItem>
             <Search />
           </Style.MenuBarItem>

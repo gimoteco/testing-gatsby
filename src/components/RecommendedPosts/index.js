@@ -6,12 +6,26 @@ function RecommendedPosts({ next, previous }) {
   return (
     <Style.RecommendedWrapper>
       {previous && (
-        <Style.RecommendedLink to={previous.fields.slug} className="previous">
+        <Style.RecommendedLink
+          cover
+          direction="left"
+          bg="var(--background)"
+          duration={0.6}
+          to={previous.fields.slug}
+          className="previous"
+        >
           {previous.frontmatter.title}
         </Style.RecommendedLink>
       )}
       {next && (
-        <Style.RecommendedLink to={next.fields.slug} className="next">
+        <Style.RecommendedLink
+          cover
+          direction="right"
+          bg="var(--background)"
+          duration={0.6}
+          to={next.fields.slug}
+          className="next"
+        >
           {next.frontmatter.title}
         </Style.RecommendedLink>
       )}

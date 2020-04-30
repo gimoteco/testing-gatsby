@@ -12,7 +12,13 @@ function PostItem({
   background,
 }) {
   return (
-    <Style.PostItemLink to={slug}>
+    <Style.PostItemLink
+      to={slug}
+      cover
+      bg="var(--background)"
+      duration={0.6}
+      direction="right"
+    >
       <Style.PostItemWrapper>
         <Style.PostItemTag background={background}>
           {category}

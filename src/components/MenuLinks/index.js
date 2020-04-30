@@ -8,7 +8,14 @@ function MenuLinks() {
       <Style.MenuLinksList>
         {links.map(link => (
           <Style.MenuLinksItem key={link.label}>
-            <Style.MenuLinksLink activeClassName="active" to={link.url}>
+            <Style.MenuLinksLink
+              activeClassName="active"
+              to={link.url}
+              cover
+              direction="left"
+              bg="var(--background)"
+              duration={0.6}
+            >
               {link.label}
             </Style.MenuLinksLink>
           </Style.MenuLinksItem>

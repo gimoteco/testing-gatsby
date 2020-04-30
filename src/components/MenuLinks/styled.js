@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { linkStyle } from "../../styles/Link"
 import media from "styled-media-query"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const MenuLinksWrapper = styled.nav`
   ${media.lessThan("large")`
@@ -22,6 +23,6 @@ export const MenuLinksItem = styled.li`
   }
 `
 
-export const MenuLinksLink = styled(Link)`
+export const MenuLinksLink = styled(AniLink)`
   ${linkStyle}
 `

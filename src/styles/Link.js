@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
 import styled, { css } from "styled-components"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const linkStyle = css`
   color: var(--texts);
@@ -11,7 +11,7 @@ export const linkStyle = css`
   }
 `
 
-export const CustomLink = styled(Link)`
+export const CustomLink = styled(AniLink)`
   ${linkStyle}
 `
 

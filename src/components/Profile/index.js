@@ -24,7 +24,13 @@ function Profile() {
 
   return (
     <Style.ProfileWrapper>
-      <CustomLink to="/about">
+      <CustomLink
+        to="/"
+        cover
+        direction="left"
+        bg="var(--background)"
+        duration={0.6}
+      >
         <Avatar />
         <Style.ProfileAuthor>
           {title}
