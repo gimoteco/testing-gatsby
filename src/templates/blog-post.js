@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import * as Style from "../components/Post/styled"
 import RecommendedPosts from "../components/RecommendedPosts"
+import Comments from "../components/Comments"
 
 function BlogPost({ data, pageContext: { nextPost, previousPost } }) {
   const {
@@ -11,6 +12,7 @@ function BlogPost({ data, pageContext: { nextPost, previousPost } }) {
       frontmatter: { title, description, date },
       html,
       timeToRead,
+      fields: { slug },
     },
   } = data
 
@@ -28,6 +30,7 @@ function BlogPost({ data, pageContext: { nextPost, previousPost } }) {
         <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </Style.MainContent>
       <RecommendedPosts next={nextPost} previous={previousPost} />
+      <Comments url={slug} title={title} />
     </Layout>
   )
 }
@@ -40,6 +43,9 @@ export const query = graphql`
         description
         date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
         category
+      }
+      fields {
+        slug
       }
       html
       timeToRead
