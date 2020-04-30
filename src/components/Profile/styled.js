@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ProfileWrapper = styled.section`
-  color: #8899a6;
+  color: var(--texts);
   display: flex;
   flex-direction: column;
 `

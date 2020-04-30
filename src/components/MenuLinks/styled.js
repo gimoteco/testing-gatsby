@@ -13,7 +13,7 @@ export const MenuLinksItem = styled.li`
   padding: 0.5rem 0;
 
   .active {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 `
 

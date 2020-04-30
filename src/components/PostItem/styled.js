@@ -4,21 +4,32 @@ import { linkStyle } from "../../styles/Link"
 
 export const PostItemLink = styled(Link)`
   ${linkStyle}
+
+  body#grid & {
+    background-color: var(--background);
+  }
 `
 
 export const PostItemWrapper = styled.section`
   align-items: center;
-  border-bottom: 1px solid #38444d;
+  border-bottom: 1px solid var(--borders);
   display: flex;
   padding: 2rem 3rem;
   width: 100%;
+
+  body#grid & {
+    border: none;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 
 export const PostItemTag = styled.div`
   align-items: center;
-  background: ${props => props.background || "#1fa1f2"};
+  background: ${props => props.background || "var(--highlight)"};
   border-radius: 50%;
-  color: #fff;
+  color: var(--white);
   display: flex;
   font-size: 1.3rem;
   font-weight: 700;
@@ -26,12 +37,21 @@ export const PostItemTag = styled.div`
   min-height: 90px;
   min-width: 90px;
   text-transform: uppercase;
+
+  body#grid & {
+    margin-bottom: 1.5rem;
+  }
 `
 
 export const PostItemInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
+
+  body#grid & {
+    line-height: 1.1;
+    margin: 0.8rem 0;
+  }
 `
 
 export const PostItemDate = styled.time`
