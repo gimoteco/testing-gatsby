@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { linkStyle } from "../../styles/Link"
+import media from "styled-media-query"
 
 export const PaginationWrapper = styled.section`
   align-items: center;
@@ -8,6 +9,11 @@ export const PaginationWrapper = styled.section`
   display: flex;
   padding: 1.5rem 3rem;
   justify-content: space-between;
+
+  ${media.lessThan("large")`
+    font-size: .8rem;
+    padding: 1rem;
+  `}
 
   a {
     ${linkStyle}
