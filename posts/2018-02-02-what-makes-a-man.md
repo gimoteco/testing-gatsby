@@ -10,6 +10,13 @@ Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus ege
 
 Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum.
 
+```python
+def ola(self, a):
+    return self.a + 1
+```
+
+teste
+
 ```jsx
 import React from "react"
 import Profile from "../Profile"

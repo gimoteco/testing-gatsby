@@ -11,6 +11,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `uploads`,
+        path: `${__dirname}/static/assets/img`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -20,12 +27,6 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/posts`,
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      option: {
-        plugins: [],
       },
     },
     `gatsby-transformer-sharp`,
@@ -45,5 +46,27 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-transformer-remark",
+      option: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 960,
+              linkImagesToOriginal: false,
+            },
+          },
+          "gatsby-remark-lazy-load",
+          `gatsby-remark-prismjs`,
+        ],
+      },
+    },
   ],
 }

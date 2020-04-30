@@ -3,9 +3,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import PostItem from "../components/PostItem"
+import Pagination from "../components/Pagination"
 
-function BlogList({ data }) {
+function BlogList({ data, pageContext }) {
   const postList = data.allMarkdownRemark.edges
+  const { total, currentPage } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === total
+  const nextPage = `/page/${currentPage + 1}`
+  const prevPage = currentPage === 2 ? "/" : `/page/${currentPage - 1}`
 
   return (
     <Layout>
@@ -29,6 +35,14 @@ function BlogList({ data }) {
           />
         )
       )}
+      <Pagination
+        total={total}
+        currentPage={currentPage}
+        prevPage={prevPage}
+        nextPage={nextPage}
+        isFirst={isFirst}
+        isLast={isLast}
+      />
     </Layout>
   )
 }
